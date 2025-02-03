@@ -1,0 +1,24 @@
+body {
+    background-color: #534949;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    text-align: center;
+    background-image:url(eläin.jpg);
+    border: 4px solid white;
+}
+
+.inline {
+    display: inline-block;
+    margin-inline: 100px;
+    background-color: white;
+    padding: 10px;
+    border: 5px solid black;
+    background-color: rgb(221, 202, 179);
+}
+
+#yritykset, #pisteet {
+    font-size: larger;
+}

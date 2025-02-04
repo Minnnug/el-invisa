@@ -7,7 +7,6 @@
 
 # TODO:
 - Kunnolliset kysymykset arrayhyn, koska en keksiny niihi mitää XD "vendor/js/script.js"
-- 
 ```javascript
 const kysymykset = [
     { kysymys: "Moikka ootko elukka?", vaihtoehdot: ["En", "Oon", "Joku muu"], oikeavastaus: 2 },

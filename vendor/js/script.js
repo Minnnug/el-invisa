@@ -67,7 +67,7 @@ function tarkistavastaus(vastaus)
 
 function loppupeli() 
 {
-    if(pisteet < 2)
+    if(pisteet < 5)
         {
             moikka = document.getElementById("pisteet");
             moikka.style.color = 'red';

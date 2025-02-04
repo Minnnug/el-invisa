@@ -8,13 +8,21 @@
 </head>
 <body>
  
-    <header>
-        <div class="header">
-    <div id="yritykset" class="inline"><span id="">Elämiä jäljellä:
-        <span id="sydämet">&#10084;&#10084;&#10084;</span></div>
-    <div id="pisteet" class="inline">Pisteet: </div>
-        </div>
-    </header>   
+<header>
+    <div class="inline">Elämiä jäljellä: <span id="yritykset">3</span></div>
+    <div class="inline">Pisteet: <span id="pisteet">0</span></div>
+</header>
+
+<div class="container">
+    <div id="kysymys" class="kysymys"></div>
+    <div class="vaihtoehto">
+        <button onclick="tarkista(0)" class="rivi" id="valinta0"></button><br>
+        <button onclick="tarkista(1)" class="rivi" id="valinta1"></button><br>
+        <button onclick="tarkista(2)" class="rivi" id="valinta2"></button>
+    </div> 
+</div>
+
+<div id="viesti" class="loppuviesti"></div>
 
 <script src="main.js"></script>
 </body>

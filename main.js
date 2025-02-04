@@ -1,43 +1,79 @@
 
-const quizdata = [
+const kysymykset = [
     {
-        question: "What animal is said to have nine lives?",
-        options: ["Fox","Cat", "Dog"],
-        correct: "Cat"
+        kysymys: "Millä eläimellä sanotaan olevan yhdeksän elämää?",
+        vaihtoehdot: ["kettu","kissa", "koira"],
+        oikein: 1
     },
     {
-        question: "What color is the tongue of a giraffe?",
-        options: ["Blue", "Green", "Purple"],
-        correct: "Purple"
+        kysymys: "Minkä värinen on kirahvin kieli?",
+        vaihtoehdot: ["sininen", "vihreä", "violetti"],
+        oikein: 2
     },
     {
-        question: "What is the only mammal that cant jump?",
-        options: ["Giraffe", "Elephant", "Whale"],
-        correct: "Elephant"
+        kysymys: "Miksi sammakot kurnuttavat",
+        vaihtoehdot: ["kommunikoidakseen", "etsiäkseen kumppania", "merkatakseen reviirin"],
+        oikein: 1
     },
     {
-        question: "What does a snake shed a few times a year?",
-        options: ["Its skin", "Its tail", "Its tongue"],
-        correct: "Its skin"
+        kysymys: "Kuinka monta silmää perhosentoukalla on?",
+        vaihtoehdot: ["8", "12", "6"],
+        oikein: 1
     },
     {
-        question: "Why do frogs croak?",
-        options: ["To communicate", "To attract a mate", "To mark their territory"],
-        correct: "To attract a mate"
+        kysymys: "Kuinka monta vuotta etana voi nukkua?",
+        vaihtoehdot: ["8", "1", "3"],
+        oikein: 2
     },
     {
-        question: "How many eyes do caterpillars have?",
-        options: ["8", "12", "6"],
-        correct: "12"
-    },
-    {
-        question: "How many years can a snail sleep for?",
-        options: ["8", "1", "3"],
-        correct: "3"
-    },
-    {
-        question: "What is the fastest animal on land?",
-        options: ["Lion", "Cheetah", "Panther"],
-        correct: "Cheetah"
+        kysymys: "Mikä on nopein eläin maalla?",
+        vaihtoehdot: ["leijona", "gepardi", "pantteri"],
+        oikein: 1
     }
 ];
+
+let kysymysindeksi = 0;
+let yritykset = 3;
+let pisteet = 0;
+
+function lataakysymys() {
+    if (kysymysindeksi >= kysymykset.length) {
+        document.getElementById("viesti").innerHTML = "ONNITTELUT, SUORITIT VISAN!&#127881";
+        return;
+    }
+
+    const kysymysdata = kysymykset[kysymysindeksi];
+    document.getElementById("kysymys").textContent = kysymysdata.kysymys;
+    document.getElementById("valinta0").textContent = kysymysdata.vaihtoehdot[0];
+    document.getElementById("valinta1").textContent = kysymysdata.vaihtoehdot[1];
+    document.getElementById("valinta2").textContent = kysymysdata.vaihtoehdot[2];
+
+    document.getElementById("yritykset").textContent = yritykset;
+    document.getElementById("pisteet").textContent = pisteet;
+    document.getElementById("viesti").textContent = "";
+}
+
+function tarkista(valinta) {
+    const kysymysdata = kysymykset[kysymysindeksi];
+
+    if (valinta === kysymysdata.oikein) {
+        pisteet++;
+        document.getElementById("pisteet").textContent = pisteet;
+        kysymysindeksi++;
+        lataakysymys();
+    }   else {
+        yritykset--;
+        document.getElementById("yritykset").textContent = yritykset;
+
+        if (yritykset === 0) {
+            document.getElementById("viesti").innerHTML = "Voi voi, elämäsi loppuivat &#128532";
+            document.getElementById("kysymys").style.display = "none";
+            document.getElementById("valinta0").style.display = "none";
+            document.getElementById("valinta1").style.display = "none";
+            document.getElementById("valinta2").style.display = "none";
+        }
+    }    
+      
+}
+    
+lataakysymys();

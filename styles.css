@@ -7,7 +7,7 @@ body {
 
 header {
     text-align: center;
-    background-image:url(eläin.jpg);
+    background-image: url(eläin.jpg);
     border: 8px solid rgb(63, 44, 36);
     padding: 35px;
 }
@@ -21,12 +21,51 @@ header {
     background-color: rgb(218, 207, 196);
     color: rgb(77, 62, 48);
     width: 350px;
-}
-
-#yritykset, #pisteet {
     font-size: 25px;
 }
 
-#sydämet {
-    color: rgb(63, 44, 36);
+.container {
+    margin-top: 100px;
+    background-image: url(eläin.jpg);
+    text-align: center;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    border: 8px solid rgb(63, 44, 36);
+    height: 420px;
+}
+
+.kysymys {
+    background-color: rgb(218, 207, 196);
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    color: rgb(77, 62, 48);
+}
+
+.rivi {
+    background-color: rgb(218, 207, 196);
+    width: 400px;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 20px;
+    color: rgb(77, 62, 48);
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+}
+
+.rivi:hover {
+    cursor: pointer;
+}
+
+#viesti {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 20px;
+    color: greenyellow;
+    
 }

@@ -1,13 +1,14 @@
-const kysymykset = [
-    { kysymys: "Moikka ootko elukka?", vaihtoehdot: ["En", "Oon", "Joku muu"], oikeavastaus: 2 },
-    { kysymys: "Mikä eläin on vedessä?", vaihtoehdot: ["Kala", "Makkara", "Mansikka"], oikeavastaus: 1 },
-    { kysymys: "Mikä näistä ei kuulu joukkoon?", vaihtoehdot: ["Lepakko", "Patknki", "moi"], oikeavastaus: 3 },
-    { kysymys: "Mikä fiilis?", vaihtoehdot: ["hyvä", "moi", "moi"], oikeavastaus: 1 },
-    { kysymys: "Mikä fiilis?", vaihtoehdot: ["hyvä", "moi", "moi"], oikeavastaus: 1 },
-    { kysymys: "Mikä fiilis?", vaihtoehdot: ["hyvä", "moi", "moi"], oikeavastaus: 1 }
+const kysymykset = 
+[
+    { kysymys: "Millä eläimellä sanotaan olevan yhdeksän elämää", vaihtoehdot: ["kettu", "kissa", "koira"], oikeavastaus: 2 },
+    { kysymys: "Minkä värinen on kirahvin kieli?", vaihtoehdot: ["sininen", "vihreä", "violetti"], oikeavastaus: 3 },
+    { kysymys: "Miksi sammakot kurnuttavat?", vaihtoehdot: ["merkatakseen reviirin", "etsiäkseen kumppania", "kommunikoidakseen"], oikeavastaus: 2 },
+    { kysymys: "Kuinka monta silmää perhosentoukalla on?", vaihtoehdot: ["8", "12", "6"], oikeavastaus: 2 },
+    { kysymys: "Kuinka monta vuotta etana voi nukkua?", vaihtoehdot: ["8", "1", "3"], oikeavastaus: 3 },
+    { kysymys: "Mikä on nopein eläin maalla?", vaihtoehdot: ["leijona", "pantteri", "gepardi"], oikeavastaus: 3 }
 ];
 
-let pisteet = 0, yritykset = 0, nykyinenkysymys = 0;
+let pisteet = 0, yritykset = 3, nykyinenkysymys = 0;
 
 function aloitapeli()
  {
@@ -35,12 +36,33 @@ function naytakysymys()
 
 function tarkistavastaus(vastaus)
  {
-    yritykset++;
-    if (vastaus === kysymykset[nykyinenkysymys].oikeavastaus) pisteet++;
-    document.getElementById("pisteet").innerText = pisteet;
-    document.getElementById("yritykset").innerText = yritykset;
-    nykyinenkysymys++;
-    naytakysymys();
+    
+    if (vastaus === kysymykset[nykyinenkysymys].oikeavastaus){
+        pisteet++;
+        document.getElementById("pisteet").innerText = pisteet;
+        
+        nykyinenkysymys++;
+        naytakysymys();
+    } 
+    else
+    {
+        yritykset --;
+    }
+    if(yritykset < 1){
+        loppupeli();
+    }
+    if(yritykset == 2)
+    {
+        document.getElementById("elama3").style.display = "none"; 
+    }
+    if(yritykset == 1)
+    {
+            document.getElementById("elama2").style.display = "none"; 
+    }
+    if(yritykset == 0)
+    {
+                document.getElementById("elama1").style.display = "none"; 
+    }
 }
 
 function loppupeli() 
@@ -58,12 +80,17 @@ function loppupeli()
     document.getElementById("aloitus").style.display = "block"; 
     document.getElementById("kysymys").style.display = "none"; 
     document.getElementById("kysymysbox").style.display = "none";
+    
 }
+
 function nollaapeli()
 {
     pisteet = yritykset = nykyinenkysymys = 0;
     moikka = document.getElementById("pisteet");
-    moikka.style.color = 'black';
+    moikka.style.color = 'white';
     document.getElementById("pisteet").innerText = pisteet;
-    document.getElementById("yritykset").innerText = yritykset;
+    document.getElementById("elama1").style.display = "block"; 
+    document.getElementById("elama2").style.display = "block"; 
+    document.getElementById("elama3").style.display = "block"; 
+    yritykset = 3;
 }

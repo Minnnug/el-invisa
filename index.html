@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eläinvisa</title>
+    <link rel="stylesheet" href="vendor/style/style.css">
+</head>
+<body>
+    <header>
+        <div class="pisteet">
+            <span style="display: inline;">Pisteet: <span id="pisteet">0</span></span>
+            <span style="display: inline;">Vastausyritykset: <span id="yritykset">0</span></span>
+        </div>
+    </header>
+    <div class="keskijuttu">
+        <div class="visailu">
+            <div id="aloitus" class="aloitus">
+                <button class="aloitanappi" onclick="aloitapeli()">Aloita Peli</button>
+                <button class="aloitanappi" onclick="nollaapeli()">Nollaa Peli</button>
+            </div>
+
+            <div id="kysymysbox" class="kysymysbox" style="display: none;">
+                <div id="kysymys" class="kysymys"></div>
+                <div class="vastausvaihtoehdot">
+                    <button class="vastaus-nappi" id="vastaus1" onclick="tarkistavastaus(1)">Placeholderi tää vaa on</button>
+                    <button class="vastaus-nappi" id="vastaus2" onclick="tarkistavastaus(2)">Placeholderi tää vaa on</button>
+                    <button class="vastaus-nappi" id="vastaus3" onclick="tarkistavastaus(3)">Placeholderi tää vaa on</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Tekijät: Santeri & Niina</p>
+    </footer>
+
+    <script src="vendor/js/script.js"></script>
+</body>
+</html>

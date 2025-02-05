@@ -6,24 +6,28 @@
     <title>Eläinvisa</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="elämät()">
  
-<header>
-    <div class="inline">Elämiä jäljellä: <span id="yritykset">3</span></div>
-    <div class="inline">Pisteet: <span id="pisteet">0</span></div>
-</header>
+    <header>
+        <div class="inline"><span id="yritykset">&#10084;&#10084;&#10084;</span></div>
+        <div class="inline">Pisteet: <span id="pisteet">0</span></div>
+    </header>
 
-<div class="container">
-    <div id="kysymys" class="kysymys"></div>
-    <div class="vaihtoehto">
-        <button onclick="tarkista(0)" class="rivi" id="valinta0"></button><br>
-        <button onclick="tarkista(1)" class="rivi" id="valinta1"></button><br>
-        <button onclick="tarkista(2)" class="rivi" id="valinta2"></button>
-    </div> 
-</div>
+    <div id="container" class="container">
+        <div id="kysymys"></div>
+        <div class="vaihtoehto">
+            <button onclick="tarkista(0)" class="rivi" id="valinta0"></button><br>
+            <button onclick="tarkista(1)" class="rivi" id="valinta1"></button><br>
+            <button onclick="tarkista(2)" class="rivi" id="valinta2"></button>
+        </div>
+    </div>
 
-<div id="viesti" class="loppuviesti"></div>
+    <div style="visibility: hidden;" class="alertbox" id="alertbox">
+        <div id="viesti"></div>
+        <button style="visibility: hidden;" id="restart">Aloita uudelleen</button>
+    </div>
 
 <script src="main.js"></script>
+
 </body>
 </html>

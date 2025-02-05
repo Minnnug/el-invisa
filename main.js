@@ -1,4 +1,3 @@
-
 const kysymykset = [
     {
         kysymys: "Millä eläimellä sanotaan olevan yhdeksän elämää?",
@@ -36,10 +35,19 @@ let kysymysindeksi = 0;
 let yritykset = 3;
 let pisteet = 0;
 
+function elämät() {
+    if (yritykset == 3) {
+        document.getElementById("yritykset").textContent = "\u2764\u2764\u2764"
+    }
+}
+
 function lataakysymys() {
     if (kysymysindeksi >= kysymykset.length) {
-        document.getElementById("viesti").innerHTML = "ONNITTELUT, SUORITIT VISAN!&#127881";
-        return;
+        document.getElementById("viesti").innerHTML = "Jee! Läpäisit visan!&#127881; &#127881; &#127881;";
+        document.getElementById("viesti").style.color = "green";
+        document.getElementById("container").style.display = "none";
+        document.getElementById("restart").style.visibility = "visible";
+        document.getElementById("alertbox").style.visibility = "visible";
     }
 
     const kysymysdata = kysymykset[kysymysindeksi];
@@ -57,23 +65,32 @@ function tarkista(valinta) {
     const kysymysdata = kysymykset[kysymysindeksi];
 
     if (valinta === kysymysdata.oikein) {
+        yritykset = 3;
         pisteet++;
         document.getElementById("pisteet").textContent = pisteet;
+
         kysymysindeksi++;
         lataakysymys();
-    }   else {
-        yritykset--;
-        document.getElementById("yritykset").textContent = yritykset;
+        elämät();
+    }
+    else {yritykset--;}
 
-        if (yritykset === 0) {
-            document.getElementById("viesti").innerHTML = "Voi voi, elämäsi loppuivat &#128532";
-            document.getElementById("kysymys").style.display = "none";
-            document.getElementById("valinta0").style.display = "none";
-            document.getElementById("valinta1").style.display = "none";
-            document.getElementById("valinta2").style.display = "none";
-        }
-    }    
-      
+    if (yritykset == 0) {
+        document.getElementById("viesti").innerHTML = "Voi voi, elämäsi loppuivat \uD83D\uDC94\uD83D\uDC94\uD83D\uDC94";
+        document.getElementById("viesti").style.color = "red";
+        document.getElementById("yritykset").textContent = "\uD83D\uDC94\uD83D\uDC94\uD83D\uDC94";
+        document.getElementById("container").style.display = "none";
+        document.getElementById("restart").style.visibility = "visible";
+        document.getElementById("alertbox").style.visibility = "visible";
+    }
+
+    if (yritykset == 2) {
+        document.getElementById("yritykset").textContent = "\u2764\u2764\uD83D\uDC94";
+    }
+
+    if (yritykset == 1) {
+        document.getElementById("yritykset").textContent = "\u2764\uD83D\uDC94\uD83D\uDC94";
+    }
 }
-    
+
 lataakysymys();

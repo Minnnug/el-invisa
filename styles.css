@@ -9,7 +9,9 @@ header {
     text-align: center;
     background-image: url(eläin.jpg);
     border: 8px solid rgb(63, 44, 36);
-    padding: 35px;
+    padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .inline  {
@@ -101,4 +103,46 @@ header {
 #restart:hover {
     background-color: rgb(201, 184, 167);
     cursor: pointer;
+}
+
+#btn {
+    background-color: rgb(218, 207, 196);
+    padding: 20px;
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(77, 62, 48);
+}
+
+#btn:hover {
+    background-color: pink;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: rgb(218, 207, 196);
+    border: 8px solid rgb(63, 44, 36);
+    color: rgb(77, 62, 48)
+}
+
+.footer {
+    background-image: url(eläin.jpg);
+    position: absolute;
+    top: 1000px;
+    width: 100%;
+    padding: 20px;
+}
+
+#nimet {
+    padding: 10px;
+    font-size: 17px;
+    background-color: rgb(218, 207, 196);
+    border: 4px solid rgb(99, 73, 56);
+    width: 100%;
+    text-align: center;
 }

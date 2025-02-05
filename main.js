@@ -41,13 +41,17 @@ function elämät() {
     }
 }
 
+function restart() {
+    location.reload();
+}
+
 function lataakysymys() {
     if (kysymysindeksi >= kysymykset.length) {
         document.getElementById("viesti").innerHTML = "Jee! Läpäisit visan!&#127881; &#127881; &#127881;";
         document.getElementById("viesti").style.color = "green";
         document.getElementById("container").style.display = "none";
-        document.getElementById("restart").style.visibility = "visible";
         document.getElementById("alertbox").style.visibility = "visible";
+        document.getElementById("btn").style.visibility = "visible";
     }
 
     const kysymysdata = kysymykset[kysymysindeksi];

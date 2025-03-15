@@ -1,0 +1,156 @@
+body {
+    background-color: #534949;
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+}
+
+header {
+    text-align: center;
+    background-image: url(eläin.jpg);
+    border: 8px solid rgb(63, 44, 36);
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inline {
+    display: inline-block;
+    margin-inline: 100px;
+    padding: 20px;
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+    background-color: rgb(218, 207, 196);
+    color: rgb(77, 62, 48);
+    width: 25%;
+    font-size: 25px;
+}
+
+#yritykset {
+    color: rgb(241, 68, 97);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: rgb(218, 207, 196);
+    border: 8px solid rgb(63, 44, 36);
+    color: rgb(77, 62, 48)
+}
+
+.container {
+    margin-top: 100px;
+    background-image: url(eläin.jpg);
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    border: 8px solid rgb(63, 44, 36);
+    height: 420px;
+}
+
+#kysymys {
+    background-color: rgb(218, 207, 196);
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    color: rgb(77, 62, 48);
+}
+
+.rivi {
+    background-color: rgb(218, 207, 196);
+    width: 100%;
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(77, 62, 48);
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+}
+
+.rivi:hover {
+    cursor: pointer;
+    background-color: rgb(201, 184, 167);
+}
+
+.alertbox {
+    background-image: url(eläin.jpg);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 250px;
+    margin-top: 100px;
+    padding: 30px;
+    border: 8px solid rgb(63, 44, 36);
+}
+
+#viesti {
+    background-color: rgb(218, 207, 196);
+    padding: 30px;
+    margin-top: 5px;
+    font-size: 20px;
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+    color: rgb(77, 62, 48);
+}
+
+#restart {
+    background-color: rgb(218, 207, 196);
+    padding: 10px;
+    margin-top: 10px;
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(77, 62, 48);
+}
+
+#restart:hover {
+    background-color: rgb(201, 184, 167);
+    cursor: pointer;
+}
+
+#btn {
+    background-color: rgb(218, 207, 196);
+    padding: 10px;
+    border: 4px solid rgb(99, 73, 56);
+    border-radius: 10px;
+    font-size: 15px;
+    color: rgb(77, 62, 48);
+}
+
+#btn:hover {
+    background-color: pink;
+}
+
+.footer {
+    background-image: url(eläin.jpg);
+    width: 100%;
+    position: sticky;
+    padding: 5px 0;
+    bottom: 0;
+    margin-top: 20px;
+}
+
+#nimet {
+    padding: 10px;
+    font-size: 15px;
+    background-color: rgb(218, 207, 196);
+    border: 4px solid rgb(99, 73, 56);
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 778px) {
+    .rivi {
+        font-size: 20px;
+    }
+}
